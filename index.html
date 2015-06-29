@@ -4,35 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
-    <title>Test</title>
+    <title>Mixtapes</title>
   </head>
   <body>
-    <button class="buttonmix 1">1</button>
-    <button class="buttonmix 2">2</button>
-    <button class="buttonmix 3">3</button>
-    <button class="buttonmix 4">4</button>
-    <div class="mix1">
-      <p>This is mix 1
+    <div class="buttons">
+      <button class="showSingle" target="1">1</button>
+      <button class="showSingle" target="2">2</button>
+      <button class="showSingle" target="3">3</button>
+      <button class="showSingle" target="4">4</button>
     </div>
-    <div class="mix2">
-      <p>This is mix 2
-    </div>
-    <div class="mix3">
-      <p>This is mix 3
-    </div>
-    <div class="mix4">
-      <p>This is mix 4
-    </div>
+    <div id="mix1" class="targetDiv">This is mix 1</div>
+    <div id="mix2" class="targetDiv">This is mix 2</div>
+    <div id="mix3" class="targetDiv">This is mix 3</div>
+    <div id="mix4" class="targetDiv">This is mix 4</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      $(document).ready(function() {
-        $( "div.mix1" ).hide();
-      })
-<!--       $( "button.1" ).click(function() {
-        $( "div.mix" ).hide();
-        $( this ).hide();
-        $( "div.mix1" ).show();
-      }); -->
+      jQuery(function(){
+        jQuery('.targetDiv').hide();
+        jQuery('.showSingle').click(function(){
+          jQuery('.targetDiv').hide();
+          jQuery('#mix'+$(this).attr('target')).show();
+        });
+      });
     </script>
     <script src="tota11y.min.js"></script>
   </body>
