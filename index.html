@@ -4,29 +4,36 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <title>Mixtapes</title>
   </head>
   <body>
-    <div class="buttons">
-      <button class="showSingle" target="1">1</button>
-      <button class="showSingle" target="2">2</button>
-      <button class="showSingle" target="3">3</button>
-      <button class="showSingle" target="4">4</button>
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-lg" role="group">
+        <button type="button" class="btn btn-default" id="mix1">1</button>
+        <button type="button" class="btn btn-default" id="mix2">2</button>
+        <button type="button" class="btn btn-default" id="mix3">3</button>
+        <button type="button" class="btn btn-default" id="mix4">4</button>
+      </div>
     </div>
-    <div id="mix1" class="targetDiv">This is mix 1</div>
-    <div id="mix2" class="targetDiv">This is mix 2</div>
-    <div id="mix3" class="targetDiv">This is mix 3</div>
-    <div id="mix4" class="targetDiv">This is mix 4</div>
+    <div class="mixbox"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      jQuery(function(){
-        jQuery('.targetDiv').hide();
-        jQuery('.showSingle').click(function(){
-          jQuery('.targetDiv').hide();
-          jQuery('#mix'+$(this).attr('target')).show();
+      $('document').ready(function(){
+        $('#mix1').click(function(){
+          $('iframe').remove();
+          $(this).siblings().removeClass('active')
+          $(this).addClass('active');
+          $('.mixbox').append('<iframe width="660" height="1200" src="https://www.mixcloud.com/widget/iframe/?autoplay=1&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-1-march-2010%2F&amp;hide_cover=1&amp;light=1&amp" frameborder="0"></iframe>');
+        });
+        $('#mix2').click(function(){
+          $('iframe').remove();
+          $(this).siblings().removeClass('active')
+          $(this).addClass('active');
+          $('.mixbox').append('<iframe width="660" height="1200" src="https://www.mixcloud.com/widget/iframe/?autoplay=1&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-2-may-2010%2F&amp;hide_cover=1&amp;light=1&amp" frameborder="0"></iframe>');
         });
       });
     </script>
-    <script src="tota11y.min.js"></script>
   </body>
 </html>
