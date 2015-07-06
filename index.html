@@ -6,21 +6,41 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
     <title>Mixtapes</title>
   </head>
   <body>
+    <div>
+      <header>
+      <h1>Cowloon's Mixtapes</h1>
+      </header>
+    </div>
     <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-lg" role="group">
-        <button type="button" class="btn btn-default active" id="mix1">1</button>
+      <div class="btnblock btn-group btn-group-lg" role="group">
+        <button type="button" class="btn btn-default" id="mix1">1</button>
         <button type="button" class="btn btn-default" id="mix2">2</button>
         <button type="button" class="btn btn-default" id="mix3">3</button>
         <button type="button" class="btn btn-default" id="mix4">4</button>
+        <button type="button" class="btn btn-default" id="mix5">5</button>
+        <button type="button" class="btn btn-default" id="mix6">6</button>
+        <button type="button" class="btn btn-default" id="mix7">7</button>
+        <button type="button" class="btn btn-default" id="mix8">8</button>
+        <button type="button" class="btn btn-default" id="mix9">9</button>
+        <button type="button" class="btn btn-default" id="mix1">10</button>
+        <button type="button" class="btn btn-default" id="mix11">11</button>
+        <button type="button" class="btn btn-default" id="mix12">12</button>
+        <button type="button" class="btn btn-default" id="mix13">13</button>
+        <button type="button" class="btn btn-default" id="mix14">14</button>
+        <button type="button" class="btn btn-default" id="mix15">15</button>
+        <button type="button" class="btn btn-default" id="mix16">16</button>
+        <button type="button" class="btn btn-default" id="mix17">17</button>
+        <button type="button" class="btn btn-default" id="mix18">18</button>
+        <button type="button" class="btn btn-default" id="mix19">19</button>
+        <button type="button" class="btn btn-default" id="mix20">20</button>
       </div>
     </div>
-    <div class="mixbox">
-      <iframe width="100%" height="760" src="https://www.mixcloud.com/widget/iframe/?autoplay=1&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-1-march-2010%2F&amp;hide_cover=1&amp;mini=1&amp;light=1&amp" frameborder="0"></iframe>
-    </div>
+    <div class="mixbox"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       $('document').ready(function(){
@@ -29,11 +49,17 @@
           $(this).siblings().removeClass('active')
           $(this).addClass('active');
         });
+        $('#mix1').click(function(){
+          $('.mixbox').append('<iframe width="100%" height="902" src="https://www.mixcloud.com/widget/iframe/?autoplay=1;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-1-march-2010%2F&amp;hide_cover=1&amp;mini=1&amp;light=1&amp" frameborder="0"></iframe>');
+        });
         $('#mix2').click(function(){
-          $('iframe').each(function(){
-            var src = $(this).attr('src');
-            $(this).attr('src', src.replace("1-march", "2-may"));
-          });
+          $('.mixbox').append('<iframe width="100%" height="1322" src="https://www.mixcloud.com/widget/iframe/?autoplay=1;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-2-may-2010%2F&amp;hide_cover=1&amp;mini=1&amp;light=1&amp" frameborder="0"></iframe>');
+        });
+        $('#mix3').click(function(){
+          $('.mixbox').append('<iframe width="100%" height="1262" src="https://www.mixcloud.com/widget/iframe/?autoplay=1;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-3-july-2010%2F&amp;hide_cover=1&amp;mini=1&amp;light=1&amp" frameborder="0"></iframe>');
+        });
+        $('#mix4').click(function(){
+          $('.mixbox').append('<iframe width="100%" height="842" src="https://www.mixcloud.com/widget/iframe/?autoplay=1;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-4-july-2010%2F&amp;hide_cover=1&amp;mini=1&amp;light=1&amp" frameborder="0"></iframe>');
         });
       });
     </script>
@@ -49,3 +75,4 @@
     </script>
   </body>
 </html>
+

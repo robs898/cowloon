@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-attachment: fixed;
 
   position: absolute;
@@ -13,8 +13,19 @@ body {
 
   font-size: 14px;
   
-  max-width: 600px;
+  max-width: 976px;
   margin: 0 auto;
   min-height: 100%;
   background: white;
+}
+header {
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+.mixbox {
+  padding-top: 10px;
+}
+.btnblock {
+  padding-top: 10px;
 }
