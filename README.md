@@ -1,4 +1,4 @@
 # cowloon
-Website for my mixtapes found at https://www.mixcloud.com/cowloon/
+Website for my mixtapes found at http://www.mixcloud.com/cowloon
 
-github page
+Visit my github page here: http://robs898.github.io/cowloon
