@@ -18,7 +18,7 @@ body {
   min-height: 100%;
 }
 header {
-  padding: 15px 15px 15px 15px;
+  padding: 10px 10px 15px 20px;
   position: relative;
   background: white;
   border-radius: 10px;
@@ -32,4 +32,7 @@ header {
 }
 .btnblock {
   padding-top: 10px;
+}
+.comm-btn {
+  margin-top: 10px;
 }
