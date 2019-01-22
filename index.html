@@ -6,44 +6,150 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <title>Mixtapes</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    <title>Mixtapes!</title>
   </head>
   <body>
+    <div class="topheader">
+      <header>
+        <h1>Cowloon's Mixtapes!</h1>
+      </header>
+    </div>
     <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-lg" role="group">
-        <button type="button" class="btn btn-default" id="mix1">1</button>
-        <button type="button" class="btn btn-default" id="mix2">2</button>
-        <button type="button" class="btn btn-default" id="mix3">3</button>
-        <button type="button" class="btn btn-default" id="mix4">4</button>
+      <div class="btn-group btn-group-lg btnblock" role="group">
+        <button type="button" class="btn btn-default mixbtn" id="mix1">1</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix2">2</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix3">3</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix4">4</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix5">5</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix6">6</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix7">7</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix8">8</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix9">9</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix10">10</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix11">11</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix12">12</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix13">13</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix14">14</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix15">15</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix16">16</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix17">17</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix18">18</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix19">19</button>
+        <button type="button" class="btn btn-default mixbtn" id="mix20">20</button>
       </div>
     </div>
-    <div class="mixbox"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--
+    <button type="button" class="btn btn-info comm-btn" data-toggle="button">
+      Toggle Commentary
+    </button>
+    -->
+    <div class="mixbox">
+    </div>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <script>
       $('document').ready(function(){
-        $('#mix1').click(function(){
+        $('.mixbtn').click(function(){
           $('iframe').remove();
           $(this).siblings().removeClass('active')
           $(this).addClass('active');
-          $('.mixbox').append('<iframe width="660" height="1200" src="https://www.mixcloud.com/widget/iframe/?autoplay=1&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-1-march-2010%2F&amp;hide_cover=1&amp;light=1&amp" frameborder="0"></iframe>');
+          $('.comm-btn').removeClass('active');
+        });
+        $('.comm-btn').click(function(){
+          $('iframe').css('height', '200');
+          if ($(this).is(':checked'))
+            if ($('iframe').attr('src').indexOf("mix-1-") != -1)
+              $('.mixbox').after('<p class="comm-text">Hello this is come commentary')
+            else if ($('iframe').attr('src').indexOf("mix-2-") != -1)
+              $('.mixbox').after('<p class="comm-text">Hello this is come commentary2')
+          else
+            $('.comm-text').remove
+        });
+        $('#mix1').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #3D1414, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="https://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-1-march-2010%2F" frameborder="0" ></iframe>');
         });
         $('#mix2').click(function(){
-          $('iframe').remove();
-          $(this).siblings().removeClass('active')
-          $(this).addClass('active');
-          $('.mixbox').append('<iframe width="660" height="1200" src="https://www.mixcloud.com/widget/iframe/?autoplay=1&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fcowloon%2Fmix-2-may-2010%2F&amp;hide_cover=1&amp;light=1&amp" frameborder="0"></iframe>');
+          $('body').css('background-image', 'linear-gradient(to bottom, #FFA500, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="https://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-2-may-2010%2F" frameborder="0"></iframe>');
+        });
+        $('#mix3').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #FF0066, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="https://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-3-july-2010%2F" frameborder="0"></iframe>');
+        });
+        $('#mix4').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #94DBFF, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="https://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-4-july-2010%2F" frameborder="0"></iframe>');
+        });
+        $('#mix5').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #00003D, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="https://www.mixcloud.com/widget/iframe/?light=0&feed=%2Fcowloon%2Fmix-5-september-2010%2F" frameborder="0"></iframe>');
+        });
+        $('#mix6').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #CCFF33, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="https://www.mixcloud.com/widget/iframe/?light=0&feed=%2Fcowloon%2Fmix-6-january-2011%2F" frameborder="0"></iframe>');
+        });
+        $('#mix7').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #1A1A1A, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-7-march-2011%2F" frameborder="0"></iframe>');
+        });
+        $('#mix8').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #000000, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-8-may-2011%2F" frameborder="0"></iframe>');
+        });
+        $('#mix9').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #00A300, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-9-july-2011%2F" frameborder="0"></iframe>');
+        });
+        $('#mix10').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #1A1A1A, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-10-july-2011%2F" frameborder="0"></iframe>');
+        });
+        $('#mix11').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #1A1A1A, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-11-october-2011%2F" frameborder="0"></iframe>');
+        });
+        $('#mix12').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #E68A5C, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-12-march-2012%2F" frameborder="0"></iframe>');
+        });
+        $('#mix13').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #001A00, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-13-may-2012%2F" frameborder="0"></iframe>');
+        });
+        $('#mix14').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #003D00, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix14-july-2012%2F" frameborder="0"></iframe>');
+        });
+        $('#mix15').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #2EB8E6, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-15-october-2012%2F" frameborder="0"></iframe>');
+        });
+        $('#mix16').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #4C0000, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-16-may-2013%2F" frameborder="0"></iframe>');
+        });
+        $('#mix17').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #B85C00, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix17-november-2013%2F" frameborder="0"></iframe>');
+        });
+        $('#mix18').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #CC5200, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix-18-april-2014%2F" frameborder="0"></iframe>');
+        });
+        $('#mix19').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #006B8F, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix19%2F" frameborder="0"></iframe>');
+        });
+        $('#mix20').click(function(){
+          $('body').css('background-image', 'linear-gradient(to bottom, #FFA347, #FFFFFF 150%)');
+          $('.mixbox').append('<iframe width="100%" height="800" src="http://www.mixcloud.com/widget/iframe/?light=0;feed=%2Fcowloon%2Fmix20%2F" frameborder="0"></iframe>');
         });
       });
     </script>
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-64797276-1");
-      pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
+
+>>>>>>> 7752effe3004427cd8cafa0b2c0685a22c7668be
